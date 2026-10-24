@@ -1,0 +1,46 @@
+---
+import Base from "../layouts/Base.astro";
+import { site, menuRoutes, url } from "../data/site";
+
+export function getStaticPaths() {
+  return menuRoutes();
+}
+
+const { menu, next } = Astro.props;
+---
+
+<Base
+  title={`${menu.title.toUpperCase()} — ${site.name.toUpperCase()}`}
+  current="menu"
+  description={menu.summary}
+>
+  <section class="page-head">
+    <p class="page-eyebrow">{menu.note}</p>
+    <h1>{menu.title}</h1>
+    <p class="page-intro">{menu.price} · {site.name}, {site.location}</p>
+  </section>
+
+  <section class="paper" aria-label={`${menu.title} in full`}>
+    <h2 class="paper-title">{menu.title}</h2>
+    <p class="paper-note">{menu.note}</p>
+    <p class="paper-price">{menu.price}</p>
+    <p class="paper-summary">{menu.summary}</p>
+    <ul class="course-list">
+      {
+        menu.courses.map((c) => (
+          <li class="course">
+            <h3>{c.name}</h3>
+            <p>{c.description}</p>
+          </li>
+        ))
+      }
+    </ul>
+    <p class="paper-cta">
+      <a class="pill-link" href={url("/visit")}>Reserve an evening</a>
+    </p>
+  </section>
+
+  <nav class="menu-next" aria-label="Next menu">
+    Next menu — <a href={url(`/${next.slug}`)}>{next.title}</a>
+  </nav>
+</Base>

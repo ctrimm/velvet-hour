@@ -1,0 +1,26 @@
+# Velvet Hour
+
+> Velvet Hour is a fine dining restaurant based in New Orleans, Louisiana. This site presents the restaurant's menus, story and reservation details.
+
+Reservations: reservations@velvethournola.com
+
+## Pages
+
+- [Home](/velvet-hour/): Hero, philosophy and numbers, the experiences, featured menus, an evening hour by hour, and press.
+- [Menus](/velvet-hour/menus): Every menu printed in full, plus the experiences in detail.
+- [Story](/velvet-hour/story): The restaurant's story, principles and booking notes.
+- [Visit](/velvet-hour/visit): Address, opening hours, seatings and good-to-know notes.
+
+## Menus
+
+- [The Tasting Menu](/velvet-hour/the-tasting-menu): Nine courses · per guest, $165. 9 courses/items listed.
+- [À La Carte](/velvet-hour/a-la-carte): Front room & bar, From $24. 7 courses/items listed.
+- [The Cellar](/velvet-hour/the-cellar): By the glass & bottle, From $18. 5 courses/items listed.
+- [Sweet Finishes](/velvet-hour/sweet-finishes): Dessert & the cheese course, From $14. 4 courses/items listed.
+
+## Experiences
+
+- The tasting menu: Nine courses at the table, the whole room on the same journey. The menu changes with the market; the pacing never does.
+- À la carte: A shorter evening in the front room: the signatures, a raw bar, and the duck for two that built our name.
+- The cellar room: A private room beneath the restaurant for ten guests, around one oak table, with the cellar at your elbow.
+- The chef's counter: Four stools at the pass. The cooks plate in front of you and talk you through every course — questions encouraged.

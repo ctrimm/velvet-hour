@@ -1,0 +1,17 @@
+---
+import { press } from "../data/site";
+---
+
+<section class="press reveal" aria-label="Kind words">
+  <h2 class="section-label">Kind words</h2>
+  <ul class="press-list">
+    {
+      press.map((p) => (
+        <li class="press-row">
+          <blockquote class="press-quote">“{p.quote}”</blockquote>
+          <p class="press-source">{p.source}</p>
+        </li>
+      ))
+    }
+  </ul>
+</section>
