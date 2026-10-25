@@ -14,6 +14,17 @@ New Orleans — two seatings a night, nine courses on the tasting menu,
 and a four-hundred-bottle cellar. Every word of it is placeholder copy
 in one file, waiting for yours.
 
+## Screenshots
+
+All framed with PrettySnap on the same warm cream background.
+
+![Home](screenshots/prettysnap-home.png)
+![Menus](screenshots/prettysnap-menus.png)
+![The Tasting Menu](screenshots/prettysnap-detail.png)
+![Story](screenshots/prettysnap-story.png)
+![Visit](screenshots/prettysnap-visit.png)
+![Mobile home](screenshots/prettysnap-mobile.png)
+
 ## Make it yours (one file)
 
 Open **`site.config.ts`** — it is the only file you need to edit:
