@@ -517,3 +517,96 @@ img { display: block; max-width: 100%; }
   .hero { min-height: 62vh; margin-top: 4vw; }
   .paper { margin: 0 12px 8vw; }
 }
+
+/* ---------- Micro-interactions ----------
+   Small motions that reward attention: underline sweeps, arrow nudges,
+   gentle image zooms, a slow candlelit drift on the hero. Transform and
+   color transitions only — never opacity fades on content (see the
+   reveal note above) — and everything stops for reduced motion. */
+
+::selection { background: var(--accent); color: var(--deep); }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+/* Nav: underline grows from the left */
+.site-nav a {
+  background: linear-gradient(currentColor, currentColor) left calc(100% - 1px) / 0% 1px no-repeat;
+  transition: background-size 0.35s ease;
+  padding-bottom: 3px;
+}
+.site-nav a:hover { background-size: 100% 1px; opacity: 1; }
+
+/* Hero: a slow, barely-there drift (the room breathing) */
+@keyframes kenburns {
+  from { transform: scale(1); }
+  to { transform: scale(1.07); }
+}
+.hero-photo img { animation: kenburns 16s ease-in-out infinite alternate; }
+
+/* Text links: the underline leans in and turns gold */
+.text-link {
+  text-decoration-color: color-mix(in srgb, currentColor 50%, transparent);
+  transition: text-underline-offset 0.3s ease, text-decoration-color 0.3s ease;
+}
+.text-link:hover { text-underline-offset: 8px; text-decoration-color: var(--accent); opacity: 1; }
+
+/* Linked photographs zoom a breath inside their frame */
+a:has(> img) { display: block; overflow: hidden; }
+a:has(> img) > img { transition: transform 0.8s cubic-bezier(0.22, 0.61, 0.21, 1); }
+a:has(> img):hover > img { transform: scale(1.04); }
+
+/* Index rows: name and arrow slide, a whisper of tint */
+.service-rows a { transition: background-color 0.35s ease; }
+.service-rows a:hover { background: color-mix(in srgb, var(--ink) 5%, transparent); opacity: 1; }
+.service-name { display: inline-block; transition: transform 0.35s ease; }
+.service-rows a:hover .service-name { transform: translateX(8px); }
+.service-arrow { transition: transform 0.35s ease; }
+.service-rows a:hover .service-arrow { transform: translateX(6px); }
+
+/* Pills: lift on hover, settle on press */
+.pill-link { transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease; }
+.pill-link:hover { transform: translateY(-2px); }
+.pill-link:active { transform: translateY(0) scale(0.98); }
+
+/* Chips rise to meet the cursor */
+.chip-list li { transition: transform 0.25s ease, border-color 0.25s ease, background-color 0.25s ease; }
+.chip-list li:hover {
+  transform: translateY(-2px);
+  border-color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 10%, transparent);
+}
+
+/* Press quotes and hours lean in slightly */
+.press-quote { transition: transform 0.35s ease; }
+.press-row:hover .press-quote { transform: translateX(6px); }
+.hours-row { transition: background-color 0.3s ease; }
+.hours-row:hover { background: color-mix(in srgb, var(--ink) 5%, transparent); }
+
+/* On the paper: courses warm up under the cursor */
+.course { transition: background-color 0.3s ease; }
+.course:hover { background: color-mix(in srgb, var(--deep-ink) 4%, transparent); }
+.course h3, .course h4 { transition: letter-spacing 0.3s ease; }
+.course:hover h3, .course:hover h4 { letter-spacing: 0.02em; }
+
+/* Next-menu link grows an arrow that nudges forward */
+.menu-next a::after {
+  content: " \2192";
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+.menu-next a:hover::after { transform: translateX(4px); }
+
+/* Footer email: gold underline sweep */
+.footer-email {
+  background: linear-gradient(var(--accent), var(--accent)) left calc(100% - 2px) / 0% 1px no-repeat;
+  transition: background-size 0.4s ease;
+  padding-bottom: 4px;
+}
+.footer-email:hover { background-size: 100% 1px; opacity: 1; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
